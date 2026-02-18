@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar Dueño — VetPro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand"><div class="dot"></div> VetPro</div>
+    <p>Sistema veterinario</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">Menú</div>
+    <a class="nav-item" href="index.html">
+      <div class="nav-icon">🏠</div> Inicio
+    </a>
+    <a class="nav-item" href="dashboard.html">
+      <div class="nav-icon">📊</div> Dashboard
+    </a>
+    <a class="nav-item" href="nueva-cita.html">
+      <div class="nav-icon">📅</div> Nueva cita
+    </a>
+    <a class="nav-item" href="nueva-mascota.html">
+      <div class="nav-icon">🐾</div> Nueva mascota
+    </a>
+    <a class="nav-item active" href="buscar-dueno.html">
+      <div class="nav-icon">🔍</div> Buscar dueño
+    </a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="sidebar-status">
+      <div class="status-dot"></div>
+      <div class="status-text">
+        <strong>API Conectada</strong>
+        veterinaria-1-1kjp.onrender.com
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <div class="topbar">
+    <div class="topbar-title">
+      <h1>Buscar dueño</h1>
+      <p>Ver dueño y sus mascotas</p>
+    </div>
+  </div>
+
+  <main style="max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon amber">🔍</div>
+        <div>
+          <div class="card-title">Buscar dueño</div>
+          <div class="card-subtitle">Busca por nombre</div>
+        </div>
+      </div>
+      <div class="search-row" style="margin-bottom:16px">
+        <input type="text" id="busqueda" placeholder="Nombre del dueño...">
+        <button class="btn" onclick="filtrarDuenos()">Buscar</button>
+      </div>
+      <div id="duenos-lista">
+        <div class="loading"><span class="spinner-dark"></span>Cargando dueños...</div>
+      </div>
+    </div>
+
+    <div class="card" id="result-card" style="display:none">
+      <div id="dueno-header"></div>
+      <div id="mascotas-result"></div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/buscar-dueno.js"></script>
+</body>
+</html>

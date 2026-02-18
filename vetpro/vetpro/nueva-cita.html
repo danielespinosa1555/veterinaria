@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva Cita — VetPro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand"><div class="dot"></div> VetPro</div>
+    <p>Sistema veterinario</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">Menú</div>
+    <a class="nav-item" href="index.html">
+      <div class="nav-icon">🏠</div> Inicio
+    </a>
+    <a class="nav-item" href="dashboard.html">
+      <div class="nav-icon">📊</div> Dashboard
+    </a>
+    <a class="nav-item active" href="nueva-cita.html">
+      <div class="nav-icon">📅</div> Nueva cita
+    </a>
+    <a class="nav-item" href="nueva-mascota.html">
+      <div class="nav-icon">🐾</div> Nueva mascota
+    </a>
+    <a class="nav-item" href="buscar-dueno.html">
+      <div class="nav-icon">🔍</div> Buscar dueño
+    </a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="sidebar-status">
+      <div class="status-dot"></div>
+      <div class="status-text">
+        <strong>API Conectada</strong>
+        veterinaria-1-1kjp.onrender.com
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <div class="topbar">
+    <div class="topbar-title">
+      <h1>Nueva cita</h1>
+      <p>Agendar una cita médica</p>
+    </div>
+  </div>
+
+  <main style="max-width:580px">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon blue">📅</div>
+        <div>
+          <div class="card-title">Nueva cita médica</div>
+          <div class="card-subtitle">Completa todos los campos para agendar</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mascota</label>
+        <select id="id_mascota">
+          <option value="">Cargando mascotas...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Fecha y hora</label>
+        <input type="datetime-local" id="fecha_cita">
+      </div>
+
+      <div class="form-group">
+        <label>Motivo de la cita</label>
+        <textarea id="motivo" placeholder="Ej: Consulta general, vacunación, revisión dental..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Estado</label>
+        <select id="estado">
+          <option value="pendiente">Pendiente</option>
+          <option value="completada">Completada</option>
+        </select>
+      </div>
+
+      <button class="btn btn-full" id="btn-guardar" onclick="guardarCita()">Guardar cita</button>
+
+      <div class="alert success" id="alert-success"></div>
+      <div class="alert error" id="alert-error"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/nueva-cita.js"></script>
+</body>
+</html>

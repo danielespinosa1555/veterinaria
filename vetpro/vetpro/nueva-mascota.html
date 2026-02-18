@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva Mascota — VetPro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand"><div class="dot"></div> VetPro</div>
+    <p>Sistema veterinario</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">Menú</div>
+    <a class="nav-item" href="index.html">
+      <div class="nav-icon">🏠</div> Inicio
+    </a>
+    <a class="nav-item" href="dashboard.html">
+      <div class="nav-icon">📊</div> Dashboard
+    </a>
+    <a class="nav-item" href="nueva-cita.html">
+      <div class="nav-icon">📅</div> Nueva cita
+    </a>
+    <a class="nav-item active" href="nueva-mascota.html">
+      <div class="nav-icon">🐾</div> Nueva mascota
+    </a>
+    <a class="nav-item" href="buscar-dueno.html">
+      <div class="nav-icon">🔍</div> Buscar dueño
+    </a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="sidebar-status">
+      <div class="status-dot"></div>
+      <div class="status-text">
+        <strong>API Conectada</strong>
+        veterinaria-1-1kjp.onrender.com
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-wrap">
+  <div class="topbar">
+    <div class="topbar-title">
+      <h1>Nueva mascota</h1>
+      <p>Registrar una nueva mascota</p>
+    </div>
+  </div>
+
+  <main style="max-width:580px">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon green">🐾</div>
+        <div>
+          <div class="card-title">Registrar mascota</div>
+          <div class="card-subtitle">Completa la información de la mascota</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Nombre de la mascota</label>
+        <input type="text" id="nombre" placeholder="Ej: Max, Luna, Rocky...">
+      </div>
+
+      <div class="form-group">
+        <label>Especie</label>
+        <div class="especies">
+          <div class="especie-btn" onclick="selEspecie(this, 'Perro')">
+            <span class="emoji">🐶</span> Perro
+          </div>
+          <div class="especie-btn" onclick="selEspecie(this, 'Gato')">
+            <span class="emoji">🐱</span> Gato
+          </div>
+          <div class="especie-btn" onclick="selEspecie(this, 'Ave')">
+            <span class="emoji">🦜</span> Ave
+          </div>
+          <div class="especie-btn" onclick="selEspecie(this, 'Conejo')">
+            <span class="emoji">🐰</span> Conejo
+          </div>
+          <div class="especie-btn" onclick="selEspecie(this, 'Hamster')">
+            <span class="emoji">🐹</span> Hamster
+          </div>
+          <div class="especie-btn" onclick="selEspecie(this, 'Otro')">
+            <span class="emoji">🐾</span> Otro
+          </div>
+        </div>
+        <input type="hidden" id="especie">
+      </div>
+
+      <div class="form-group">
+        <label>Dueño</label>
+        <select id="id_dueno">
+          <option value="">Cargando dueños...</option>
+        </select>
+      </div>
+
+      <button class="btn btn-full" id="btn-guardar" onclick="guardarMascota()">Registrar mascota</button>
+
+      <div class="alert success" id="alert-success"></div>
+      <div class="alert error" id="alert-error"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/nueva-mascota.js"></script>
+</body>
+</html>
